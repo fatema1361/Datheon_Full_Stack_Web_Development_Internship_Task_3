@@ -3,9 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Live Weather Forecast & Climate Telemetry App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <!-- Header -->
+         <header class="header">
+            <div class="logo">
+                <span>🌤️</span>
+                <h2>Weather <span>Now</span></h2>
+            </div>
+            <p>Live Weather & Climate Dashboard</p>
+         </header>
+         <!-- search section -->
+          <section class="search-section">
+            <form id="searchForm">
+                <input type="text" id="cityInput"
+                placeholder="Search any city..."
+                autocomplete="off" required>
+                <button type="submit" id="searchBtn">
+                    Search
+                </button>
+            </form>
+          </section>
+          <!-- error message -->
+           <div id="errorMessage" class="error-message"></div>
+
+           <div id="loading" class="loading hidden">
+               <div class="spinner"></div>
+               <p>Fetching weather data...</p>
+           </div>
+           <!-- weather dashBoard -->
+            <main id="weatherDashboard" class="hidden">
+                <section class="weather-card">
+                    <div class="weather-top">
+                        <div>
+                            <p class="location-label">CURRENT WEATHER</p>
+                            <h1 id="cityName">Noakhali</h1>
+                            <p id="weatherDate">Today</p>
+                        </div>
+                        <div class="weather-icon">
+                            <img src="" alt="Weather icon" id="weatherIcon">
+                        </div>
+                    </div>
+                    <div class="temperature-section">
+                        <h2>
+                            <span id="temperature">--</span><sup>°C</sup>
+                        </h2>
+                        <p id="weatherDescription">Weather condition</p>
+                        <p class="feels-like">Feels like
+                            <span id="feelsLike">--</span>°C
+                        </p>
+                    </div>
+
+                    <!-- weather details -->
+                     <div class="weather-details">
+                        <div class="detail-box">
+                            <span>💧</span>
+                            <div>
+                                <p>Humidity</p>
+                                <h3 id="humidity">--%</h3>
+                            </div>
+                        </div>
+
+                        <div class="detail-box">
+                            <span>💨</span>
+                            <div>
+                                <p>Wind Speed</p>
+                                <h3 id="windSpeed">--km/h</h3>
+                            </div>
+                        </div>
+                        <div class="detail-box">
+                            <span>🌡️</span>
+                            <div>
+                                <p>Pressure</p>
+                                <h3 id="pressure">--hPa</h3>
+                            </div>
+                        </div>
+                        <div class="detail-box">
+                            <span>☁️</span>
+                            <div>
+                                <p>Cloudiness</p>
+                                <h3 id="cloudiness">--%</h3>
+                            </div>
+                        </div>
+                     </div>
+                </section>
+                <!-- day forecast -->
+                 <section class="forecast-section">
+                    <div class="section-heading">
+                        <h2>5-Day Forecast</h2>
+                        <p>Weather predictions for upcoming days</p>
+                    </div>
+                    <div id="forecastContainer" class="forecast-container">
+                        <!-- forecast card -->
+                    </div>
+                 </section>
+            </main>
+            <!-- footer  -->
+             <footer>
+                <p>
+                   Weather data provided by
+                   <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">
+                    OpenWeatherMap
+                   </a>
+                </p>
+                <p>Built with HTML, CSS & JavaScript ❤️</p>
+             </footer>
+    </div>
+    <script src="script.js"></script>
     
 </body>
 </html>
